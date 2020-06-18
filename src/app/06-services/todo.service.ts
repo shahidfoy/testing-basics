@@ -1,20 +1,20 @@
 
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
 
 export class TodoService { 
   constructor(private http: HttpClient) { 
   }
 
-  add(todo) {
-    return this.http.post('...', todo)//.map(r => r.json());
+  add(todo): Observable<any> {
+    return this.http.post('...', todo); //.map(r => r.json());
   }
 
-  getTodos() { 
-    return this.http.get('...')//.map(r => r.json());
+  getTodos(): Observable<any> { 
+    return this.http.get('...'); //.map(r => r.json());
   }
 
-  delete(id) {
-    return this.http.delete('...')//.map(r => r.json());
+  delete(id): Observable<any> {
+    return this.http.delete('...'); //.map(r => r.json());
   }
 }
